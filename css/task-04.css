@@ -1,0 +1,28 @@
+.button {
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  gap: 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #4e75ff;
+  /** text */
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+}
+.label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+.input {
+  width: 360px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid #808080;
+  margin-bottom: 8px;
+}

@@ -28,24 +28,8 @@ const images = [
   },
 ];
 
-
-const gallery = document.querySelector(".gallery")
-  gallery.style.display = "flex";
-  gallery.style.flexWrap = "wrap";
-  gallery.style.gap = "48px 24px"
-  gallery.style.maxWidth = "1150px"
-  gallery.style.padding = "0"
-  gallery.style.listStyle = "none"
-images.forEach(image => {
-  const list = document.createElement("li");
-  list.style.height = "300px"
-
-  const img = document.createElement("img");
-  img.style.width = "360px"
-  img.style.height = "300px"
-  img.src = image.url;
-  img.alt = image.alt;
-  list.appendChild(img);
-  gallery.appendChild(list);
-});
-document.body.appendChild(gallery)
+const createItem = ({ url, alt }) =>
+  `<li class = "list-item"><img class = "list-image" src="${url}" alt="${alt}"></li>`;
+const galleryItem = images.reduce((acc, item) => acc + createItem(item), "");
+const list = document.querySelector(".gallery");
+list.insertAdjacentHTML("afterbegin", galleryItem);
